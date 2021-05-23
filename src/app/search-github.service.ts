@@ -24,6 +24,28 @@ getUser(username: string) {
     avatar_url: String,
     created_at: Date
   }
-
-
-}}
+  let promise = new Promise<void>((resolve, reject) => {
+    this.http.get<ApiResponse>("https://api.github.com/users/" + username).toPromise().then(Response => {
+      this.user.bio = Response.bio;
+      this.user.public_repos = Response.public_repos;
+      this.user.login = Response.login;
+      this.user.avatar_url = Response.avatar_url;
+      this.user.created_at = Response.created_at;
+      resolve()
+    },
+      error => {
+        reject(error)
+      })
+    this.http.get<any>("https://api.github.com/users/" + username + "/repos").toPromise().then(response => {
+      for (let i = 0; i < response.lenght; i++) {
+        this.newUserData = new Repository(response[i].name, response[i].description, response[i].updated_at, response[i].clone_url, response[i].language);
+      this.repodata.push(this.newUserData);
+      }
+      resolve()
+    },
+    error => {
+      reject(error)
+    })
+  })
+return promise;
+  }}
