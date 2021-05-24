@@ -7,7 +7,7 @@ This is my website used for searching Github accounts and repositories.
 ## Setup/Installation Requirements
 * Clone the repo {https://github.com/KIbet1998/Github-Finder.git}
 * Once you clone,you can have it in your local machine.
-## [live link]https://kibet1998.github.io/QUOTE-IQ/
+## [live link]
 )
 ## Known Bugs
 There are no bugs.
