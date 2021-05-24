@@ -1,8 +1,21 @@
-<div class="container">
+<!-- <div class="container">
   <div class="col md-6">
     <p>Welcome to my Github.What are you looking for?</p>
     <a class="btn btn-outline-warning btn-sm" id="" routerLink="/github-form">Enter Github Username</a>
     <a class="btn btn-outline-warning btn-sm" routerLink='/github-results'>See Results</a>
     <router-outlet></router-outlet>
+  </div>
+</div> -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <app-github-form></app-github-form>
+
+    </div>
+
+    <div class="col-md-6">
+      <app-github-results></app-github-results>
+
+    </div>
   </div>
 </div>
