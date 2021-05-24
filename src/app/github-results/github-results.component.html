@@ -1,1 +1,22 @@
-<p>github-results works!</p>
+<div class="row">
+  <div class="col-md-6">
+    <h4>{{user.login}}</h4>
+    <img src="{{user.avatar_url}}" alt="">
+    <p>Bio {{user.bio}}</p>
+    <p>Date created {{user.created_at | date}}</p>
+    <P>Number of Repositories: {{user.public_repos}}</P>
+    <!-- <h4> logged in as: {{user.login}}</h4>
+    <img src={{user.avatar_url}} alt="">
+    <p>bio {{user.bio}}</p>
+    <p> Created on: {{user.created_at | date}}</p>
+    <p>Number of Repositories:{{user.public_repos}}</p> -->
+  </div>
+</div>
+<div class="col-md-6">
+  <div *ngFor='let repoDetail of repoDetails'>
+    <h4>{{repoDetail.name}} | {{repoDetail.clone_url}}</h4>
+    <p>{{repoDetail.description}}</p>
+    <small>{{repoDetail.language}}</small>
+    <small>{{repoDetail.updated_at | date}}</small>
+  </div>
+</div>

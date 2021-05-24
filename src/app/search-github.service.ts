@@ -37,7 +37,7 @@ getUser(username: string) {
         reject(error)
       })
     this.http.get<any>("https://api.github.com/users/" + username + "/repos").toPromise().then(response => {
-      for (let i = 0; i < response.lenght; i++) {
+      for (let i = 0; i < response.length; i++) {
         this.newUserData = new Repository(response[i].name, response[i].description, response[i].updated_at, response[i].clone_url, response[i].language);
       this.repodata.push(this.newUserData);
       }

@@ -1,7 +1,5 @@
-
-
-<form>
-    <input type="text" name="username" class="form-control" placeholder="Enter Your Username">
+<form (ngSubmit)='submitUsername()'>
+    <input type="text" name="username" [(ngModel)]='username' class="form-control" placeholder="Enter Your Username">
     <button class="btn btn-outline-success btn-sm">Fetch Github Data</button>
 </form>
 
